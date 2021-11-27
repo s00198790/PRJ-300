@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
-import { threadId } from 'worker_threads';
 
 @Component({
   selector: 'app-login',

@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { ListingsComponent } from './listings/listings.component';
 import { FirebaseService } from './services/firebase.service';
+import { LoggedinComponent } from './loggedin/loggedin.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FirebaseService } from './services/firebase.service';
     HomeComponent,
     NavbarComponent,
     LoginComponent,
-    ListingsComponent
+    ListingsComponent,
+    LoggedinComponent
   ],
   imports: [
     BrowserModule,
