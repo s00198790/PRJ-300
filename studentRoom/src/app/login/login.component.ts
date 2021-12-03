@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent  {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  title = 'studentRoom';
+  isSignedIn=false
+  constructor(){}
+  ngOnInit(){
+    
   }
+  
 
 }

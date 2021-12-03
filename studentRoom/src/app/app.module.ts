@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { ListingsComponent } from './listings/listings.component';
+import { environment } from '../environments/environment';
+import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,13 @@ import { ListingsComponent } from './listings/listings.component';
     HomeComponent,
     NavbarComponent,
     LoginComponent,
-    ListingsComponent
+    ListingsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [ScreenTrackingService,UserTrackingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
