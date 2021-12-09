@@ -15,6 +15,12 @@ import {MatIconModule} from '@angular/material/icon';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignupComponent } from './signup/signup.component';
 import {MatButtonModule} from '@angular/material/button';
+import { AngularFireModule } from '@angular/fire/compat';
+import { FirebaseService } from './services/firebase.service';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -32,9 +38,14 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore())
   ],
-  providers: [ScreenTrackingService,UserTrackingService],
+  providers: [ScreenTrackingService,UserTrackingService,FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
