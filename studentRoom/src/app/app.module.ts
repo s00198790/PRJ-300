@@ -9,6 +9,12 @@ import { LoginComponent } from './login/login.component';
 import { ListingsComponent } from './listings/listings.component';
 import { environment } from '../environments/environment';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import{MatToolbarModule} from '@angular/material/toolbar'
+import {MatIconModule} from '@angular/material/icon';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SignupComponent } from './signup/signup.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -17,10 +23,16 @@ import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService
     NavbarComponent,
     LoginComponent,
     ListingsComponent,
+    DashboardComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [ScreenTrackingService,UserTrackingService],
   bootstrap: [AppComponent]
