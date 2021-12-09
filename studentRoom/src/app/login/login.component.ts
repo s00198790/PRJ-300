@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service'
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
     selector: 'app-login',
@@ -12,35 +11,27 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class LoginComponent implements OnInit {
 
-    loginForm: FormGroup;
-    firebaseErrorMessage: string;
+    isSignedIn=false
+    constructor(public firebaseService : FirebaseService){}
 
-    constructor(private authService: AuthService, private router: Router, private afAuth: AngularFireAuth) {
-        this.loginForm = new FormGroup({
-            'email': new FormControl('', [Validators.required, Validators.email]),
-            'password': new FormControl('', Validators.required)
-        });
-
-        this.firebaseErrorMessage = '';
-    }
-
-    ngOnInit(): void {
+    ngOnInit(){
+        if(localStorage.getItem('user')!== null)
+        this.isSignedIn=true
+        else
+        this.isSignedIn=false
+      }
+      async onSignup(email:string,password:string){
+        await this.firebaseService.signup(email,password)
+        if(this.firebaseService.isLoggedIn)
+        this.isSignedIn=true
+      }
+      async onSignin(email:string,password:string){
+        await this.firebaseService.signup(email,password)
+        if(this.firebaseService.isLoggedIn)
+        this.isSignedIn=true
+      }
+      handleLogout(){
+        this.isSignedIn = false
         
-    }
-
-    loginUser() {
-        if (this.loginForm.invalid)
-            return;
-
-        this.authService.loginUser(this.loginForm.value.email, this.loginForm.value.password).then((result) => {
-            if (result == null) {                               
-                console.log('logging in...');
-                this.router.navigate(['/dashboard']);                
-            }
-            else if (result.isValid == false) {
-                console.log('login error', result);
-                this.firebaseErrorMessage = result.message;
-            }
-        });
-    }
+      }
 }

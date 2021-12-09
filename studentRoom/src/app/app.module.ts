@@ -7,16 +7,22 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { ListingsComponent } from './listings/listings.component';
-import { environment } from '../environments/environment';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { MatButtonModule} from '@angular/material/button';
 import { MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatInputModule} from '@angular/material/input';
+import { MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { FirebaseService } from './services/firebase.service';
+import { initializeApp } from "firebase/app";
+
 
 
 @NgModule({
@@ -33,14 +39,26 @@ import { SignupComponent } from './signup/signup.component';
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyBVSHyd7uPdzEsdunM7ApCDNEoreVVV5sI",
+    authDomain: "studentrooms-5977a.firebaseapp.com",
+    projectId: "studentrooms-5977a",
+    storageBucket: "studentrooms-5977a.appspot.com",
+    messagingSenderId: "92247715845",
+    appId: "1:92247715845:web:cc0ce13151f98cfc1a6c6c"
+    }),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     MatButtonModule,
     MatCardModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatIconModule,
+    
   ],
-  providers: [ScreenTrackingService,UserTrackingService],
+  providers: [ScreenTrackingService,UserTrackingService,FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
