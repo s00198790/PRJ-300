@@ -3,8 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+
   production: false,
-  firebase: {
+  
+
+  firebaseConfig: {
+
     projectId: 'studentroom-f4ec0',
     appId: '1:775340784871:web:8b8ba6530ec4a269423642',
     storageBucket: 'studentroom-f4ec0.appspot.com',
@@ -13,7 +17,7 @@ export const environment = {
     authDomain: 'studentroom-f4ec0.firebaseapp.com',
     messagingSenderId: '775340784871',
     measurementId: 'G-CW6N4C57BN',
-  }
+    databaseURL: "https://studentroom-f4ec0-default-rtdb.europe-west1.firebasedatabase.app"
 };
 
 /*

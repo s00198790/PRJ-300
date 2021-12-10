@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignupComponent } from './signup/signup.component';
 import {MatButtonModule} from '@angular/material/button';
+
 import { AngularFireModule } from '@angular/fire/compat';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
@@ -64,6 +65,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
+import { ImagesComponent } from './images/images.component';
+import { ImageComponent } from './images/image/image.component';
+import { ImageListComponent } from './images/image-list/image-list.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,10 +83,16 @@ import { HttpClientModule } from '@angular/common/http';
     ListingsComponent,
     DashboardComponent,
     SignupComponent,
+
     ProfileComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
     AdminDashboardComponent,
+
+    ImagesComponent,
+    ImageComponent,
+    ImageListComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -85,6 +101,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
@@ -128,6 +145,12 @@ import { HttpClientModule } from '@angular/common/http';
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
+
+
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    ReactiveFormsModule
 
   ],
   providers: [ScreenTrackingService,UserTrackingService],
