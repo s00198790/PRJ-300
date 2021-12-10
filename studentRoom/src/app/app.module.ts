@@ -15,6 +15,13 @@ import {MatIconModule} from '@angular/material/icon';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignupComponent } from './signup/signup.component';
 import {MatButtonModule} from '@angular/material/button';
+import { ImagesComponent } from './images/images.component';
+import { ImageComponent } from './images/image/image.component';
+import { ImageListComponent } from './images/image-list/image-list.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +32,9 @@ import {MatButtonModule} from '@angular/material/button';
     ListingsComponent,
     DashboardComponent,
     SignupComponent,
+    ImagesComponent,
+    ImageComponent,
+    ImageListComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +42,11 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    ReactiveFormsModule
   ],
   providers: [ScreenTrackingService,UserTrackingService],
   bootstrap: [AppComponent]
