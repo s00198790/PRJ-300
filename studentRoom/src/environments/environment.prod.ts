@@ -1,5 +1,5 @@
 export const environment = {
-  firebase: {
+  firebaseConfig: {
     projectId: 'studentroom-f4ec0',
     appId: '1:775340784871:web:8b8ba6530ec4a269423642',
     storageBucket: 'studentroom-f4ec0.appspot.com',

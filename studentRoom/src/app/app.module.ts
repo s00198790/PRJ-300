@@ -43,7 +43,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule
