@@ -18,6 +18,7 @@ export const environment = {
     messagingSenderId: '775340784871',
     measurementId: 'G-CW6N4C57BN',
     databaseURL: "https://studentroom-f4ec0-default-rtdb.europe-west1.firebasedatabase.app"
+  }
 };
 
 /*

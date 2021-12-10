@@ -11,4 +11,5 @@ export const environment = {
     authDomain: 'studentroom-f4ec0.firebaseapp.com',
     messagingSenderId: '775340784871',
     measurementId: 'G-CW6N4C57BN',
+  }
 };
