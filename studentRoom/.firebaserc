@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "studentroom-f4ec0": {
+      "hosting": {
+        "studentRoom": [
+          "studentroom-f4ec0"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "studentroom-f4ec0"
+  }
+}

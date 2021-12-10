@@ -5,11 +5,11 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat
 import { Observable } from 'rxjs';
 
 @Component({
-    selector: 'app-dashboard',
-    templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.css']
+    selector: 'app-admin-dashboard',
+    templateUrl: './admin-dashboard.component.html',
+    styleUrls: ['./admin-dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class AdminDashboardComponent implements OnInit {
 
     user: Observable<any>;              // Example: store the user's info here (Cloud Firestore: collection is 'users', docId is the user's email, lower case)
 
@@ -18,14 +18,11 @@ export class DashboardComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.afAuth.authState.subscribe(user => {
-            console.log('Dashboard: user', user);
-
+        this.afAuth.authState.subscribe(user => {                                                   // grab the user object from Firebase Authorization
             if (user) {
                 let emailLower = user.email.toLowerCase();
-                this.user = this.firestore.collection('users').doc(emailLower).valueChanges();
+                this.user = this.firestore.collection('users').doc(emailLower).valueChanges();      // get the user's doc in Cloud Firestore
             }
         });
     }
 }
-
