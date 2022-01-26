@@ -89,7 +89,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
     ImagesComponent,
     ImageComponent,
-    ImageListComponent,
+    ImageListComponent
 
   ],
   imports: [
