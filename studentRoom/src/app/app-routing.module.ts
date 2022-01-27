@@ -15,6 +15,7 @@ import { AuthGuard } from './services/auth.guard';
 
 import { ImageComponent } from './images/image/image.component'; 
 import { ImageListComponent } from './images/image-list/image-list.component';
+import { DisplayListingsComponent } from './display-listings/display-listings.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,11 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   {path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard] },
 
-  {path: 'listings', component: ListingsComponent, children:[{path:'upload', component: ImageComponent},{path: 'list', component: ImageListComponent}]},
+  {path: 'listings', component: ListingsComponent},
+  {path:'upload', component: ImageComponent},
+  {path: 'list', component: ImageListComponent},
+  {path: 'property', component: DisplayListingsComponent},
+
   
 
   {path: 'login', component: LoginComponent},

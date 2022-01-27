@@ -1,10 +1,11 @@
 <table *ngIf="imageList">
     <tr *ngFor="let i of rowIndexArray">
         <td>
-        <div class="imagebox">
+        <div class="imagebox" (click)="openListing()">
             <img [src]="imageList[3*i].imageUrl" class="img-fluid">
             <span class="imagebox-desc">{{imageList[3*i].caption}}</span>
         </div>
+        
         </td>
         <td>
         <div class="imagebox">

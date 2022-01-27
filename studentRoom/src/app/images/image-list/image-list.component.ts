@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { ImageService } from 'src/app/shared/image.service';
+
 
 @Component({
   selector: 'app-image-list',
@@ -11,7 +13,11 @@ export class ImageListComponent implements OnInit {
   imageList: any[];
   rowIndexArray: any[];
 
-  constructor(private service: ImageService) { }
+  constructor(private service: ImageService, public router: Router) {}
+
+  openListing() {
+    this.router.navigate(['property']);
+  }
 
   ngOnInit(): void {
     this.service.imageDetailList.snapshotChanges().subscribe(
