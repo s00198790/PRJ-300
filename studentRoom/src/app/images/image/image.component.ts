@@ -42,7 +42,7 @@ formTemplate = new FormGroup({
   onSubmit(formValue: any) {
     this.isSubmitted = true;
     if(this.formTemplate.valid){
-      var filePath = '${formValue.category}/${this.selectedImage.name.split}_${new Date().getTime()}';
+      var filePath = `${formValue.category}/${this.selectedImage.name.split}_${new Date().getTime()}`;
       const fileRef = this.storage.ref(filePath);
       this.storage.upload(filePath, this.selectedImage).snapshotChanges().pipe(
         finalize(()=>{
