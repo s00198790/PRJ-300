@@ -31,3 +31,9 @@
 .imagebox:hover .imagebox-desc {
   padding-bottom: 10%;
 }
+.img-fluid
+{
+  width: 500px;
+  height: 500px;
+  align-content: center;
+}
