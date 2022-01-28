@@ -12,7 +12,7 @@
 }
 
 .imagebox .imagebox-desc {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(81, 109, 231, 0.6);
   bottom: 0px;
   color: white;
   font-size: 1.2em;
@@ -22,6 +22,7 @@
   transition: 0.5s padding;
   text-align: center;
   width: 100%;
+  
 }
 
 .imagebox:hover img {
@@ -31,3 +32,21 @@
 .imagebox:hover .imagebox-desc {
   padding-bottom: 10%;
 }
+html{
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50%;
+}
+body {
+
+  text-align: center;
+  
+  }
+  div {
+    padding-bottom: 30px;
+  }
