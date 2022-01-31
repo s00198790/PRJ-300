@@ -10,12 +10,20 @@
         <div class="text-danger" *ngIf="isSubmitted && form['imageUrl'].errors['required']">This field is required.</div>
     </div>
     <div class="form-group">
-        <input class="form-control" formControlName="caption" placeholder="caption">
+        <input class="form-control" formControlName="caption" placeholder="Caption">
         <div class="text-danger" *ngIf="isSubmitted && form['caption'].errors['required']">This field is required.</div>
+    </div>
+    <div class="form-group">
+        <input class="form-control" formControlName="price" placeholder="Price">
+        <div class="text-danger" *ngIf="isSubmitted && form['price'].errors['required']">This field is required.</div>
+    </div>
+    <div class="form-group">
+        <input class="form-control" formControlName="shortDesc" placeholder="Short Description">
+        <div class="text-danger" *ngIf="isSubmitted && form['shortDesc'].errors['shortDesc']">This field is required.</div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-            <a routerLink="/listings/list" class="btn btn-primary btn-block float-right">Go To Listings</a>
+            <a routerLink="/listings" class="btn btn-primary btn-block float-right">Go To Listings</a>
         </div>
         <div class="form-group col-md-6">
             <button type="submit" class="btn btn-success btn-block float-right">Submit</button>   
