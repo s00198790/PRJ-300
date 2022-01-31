@@ -5,11 +5,10 @@
             <img [src]="imageList[3*i].imageUrl" class="img-fluid">
             <div class="card-body">
                 <div class="small text-muted">{{imageList[3*i].price}}</div>
-                <h2 class="card-title">{{imageList[3*i].caption}}</h2>
+                <h2 class="card-title">{{imageList[3*i].location}}</h2>
                 <p class="card-text">{{imageList[3*i].shortDesc}}</p>
                 <a class="btn btn-primary" (click)="openListing()">View Listing</a>
             </div>
-            <!-- <span class="imagebox-desc">{{imageList[3*i].caption}}</span> -->
         </div>
         
         </td>
@@ -18,11 +17,10 @@
             <img [src]="imageList[3*i+1].imageUrl" class="img-fluid">
             <div class="card-body">
                 <div class="small text-muted">{{imageList[3*i+1].price}}</div>
-                <h2 class="card-title">{{imageList[3*i+1].caption}}</h2>
+                <h2 class="card-title">{{imageList[3*i+1].location}}</h2>
                 <p class="card-text">{{imageList[3*i+1].shortDesc}}</p>
                 <a class="btn btn-primary" (click)="openListing()">View Listing</a>
             </div>
-            <!-- <span class="imagebox-desc">{{imageList[3*i+1].caption}}</span> -->
         </div>
         </td>
         <td>
@@ -30,21 +28,11 @@
             <img [src]="imageList[3*i+2].imageUrl" class="img-fluid">
             <div class="card-body">
                 <div class="small text-muted">{{imageList[3*i+2].price}}</div>
-                <h2 class="card-title">{{imageList[3*i+2].caption}}</h2>
+                <h2 class="card-title">{{imageList[3*i+2].location}}</h2>
                 <p class="card-text">{{imageList[3*i+2].shortDesc}}</p>
                 <a class="btn btn-primary" (click)="openListing()">View Listing</a>
             </div>
-            <!-- <span class="imagebox-desc">{{imageList[3*i+2].caption}}</span> -->
         </div>
         </td>
     </tr>
-    <!-- <div class="card mb-4" *ngFor="let i of rowIndexArray">
-        <a href="#!"><img class="card-img-top" [src]="imageList[3*i].imageUrl" alt="..." /></a>
-        <div class="card-body">
-            <div class="small text-muted">€1,000 /month</div>
-            <h2 class="card-title">Sligo</h2>
-            <p class="card-text">2 Bedroom Apartment</p>
-            <a class="btn btn-primary" (click)="openListing()">View Listing</a>
-        </div>
-    </div> -->
 </table>

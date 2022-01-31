@@ -18,7 +18,7 @@ export class ImageComponent implements OnInit {
 formTemplate = new FormGroup({
   shortDesc: new FormControl('',Validators.required),
   price: new FormControl('',Validators.required),
-  caption: new FormControl('',Validators.required),
+  location: new FormControl('',Validators.required),
   imageUrl: new FormControl('',Validators.required)
 }) 
 
@@ -67,7 +67,7 @@ formTemplate = new FormGroup({
     this.formTemplate.setValue({
       shortDesc: '',
       price: '',
-      caption:'',
+      location:'',
       imageUrl:''
     });
     this.imgSrc = '/assets/img/Placeholder.jpg';
