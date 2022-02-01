@@ -9,13 +9,13 @@ export const environment = {
 
   firebaseConfig: {
 
-  apiKey: "AIzaSyDg0gNV4-EyXMPeWUrZKnC-UqwxPp-JRLw",
-  authDomain: "prj300-31d5b.firebaseapp.com",
-  databaseURL: "https://prj300-31d5b-default-rtdb.firebaseio.com",
-  projectId: "prj300-31d5b",
-  storageBucket: "prj300-31d5b.appspot.com",
-  messagingSenderId: "1036182122826",
-  appId: "1:1036182122826:web:ca23534506098b215a91b3"
+    apiKey: "AIzaSyCMwhkiJNd5eRoHoBzS28kgG6iW5hfwCis",
+    authDomain: "studentroom-bd0ca.firebaseapp.com",
+    databaseURL: "https://studentroom-bd0ca-default-rtdb.firebaseio.com",
+    projectId: "studentroom-bd0ca",
+    storageBucket: "studentroom-bd0ca.appspot.com",
+    messagingSenderId: "411994494734",
+    appId: "1:411994494734:web:a2da6ec1923807e36ae95f"
   }
 };
 
