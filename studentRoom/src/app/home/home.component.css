@@ -1,8 +1,7 @@
 html,body {
         background-image: url('https://www.dentons.com/-/media/images/website/background-images/practices/real-estate/real-estate-3.jpg');
         margin: 0px;
-        height: 154%;
-        width: 100%;
+        background-size: cover;
 }
 
 body {

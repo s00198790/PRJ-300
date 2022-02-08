@@ -3,6 +3,7 @@
   padding: 0px;
   position: relative;
   width: 100%;
+  
 }
 
 .imagebox img {
@@ -21,6 +22,7 @@
   transition: 0.5s padding;
   text-align: center;
   width: 100%;
+  
 }
 
 .imagebox:hover img {
@@ -39,4 +41,5 @@
 
 .card mb-4{
   align-content: center;  
+  text-align: center;
 }
