@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { ListingsComponent } from './listings/listings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignupComponent } from './signup/signup.component';
 
@@ -13,9 +12,9 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './services/auth.guard';
 
-import { ImageComponent } from './images/image/image.component'; 
-import { ImageListComponent } from './images/image-list/image-list.component';
-import { DisplayListingsComponent } from './display-listings/display-listings.component';
+import { PropertyComponent } from './property/property.component';
+import { UploadPropertyComponent } from './property/upload-property/upload-property.component';
+import { DetailedPropertyComponent } from './property/detailed-property/detailed-property.component';
 
 
 const routes: Routes = [
@@ -26,10 +25,9 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   {path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard] },
 
-  {path: 'listings', component: ListingsComponent},
-  {path:'upload', component: ImageComponent},
-  {path: 'list', component: ImageListComponent},
-  {path: 'property', component: DisplayListingsComponent},
+  {path: 'listings', component: PropertyComponent},
+  {path:'upload', component: UploadPropertyComponent},
+  {path: 'property', component: DetailedPropertyComponent},
 
   
 

@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { finalize } from 'rxjs';
-import { ImageService } from 'src/app/shared/image.service';
+import { PropertyService } from 'src/app/services/property.service';
 
 @Component({
-  selector: 'app-image',
-  templateUrl: './image.component.html',
-  styleUrls: ['./image.component.css']
+  selector: 'app-upload-property',
+  templateUrl: './upload-property.component.html',
+  styleUrls: ['./upload-property.component.css']
 })
-export class ImageComponent implements OnInit {
+export class UploadPropertyComponent implements OnInit {
 
   imgSrc: string = '/assets/img/Placeholder.jpg';
   selectedImage: any = null;
@@ -22,7 +22,7 @@ formTemplate = new FormGroup({
   imageUrl: new FormControl('',Validators.required)
 }) 
 
-  constructor(private storage:AngularFireStorage, private service:ImageService) { }
+  constructor(private storage:AngularFireStorage, private service:PropertyService) { }
 
   ngOnInit(): void {
     this.resetForm();

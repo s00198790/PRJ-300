@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
-import { ListingsComponent } from './listings/listings.component';
 import { environment } from '../environments/environment';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -65,12 +64,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
-import { ImagesComponent } from './images/images.component';
-import { ImageComponent } from './images/image/image.component';
-import { ImageListComponent } from './images/image-list/image-list.component';
+
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { DisplayListingsComponent } from './display-listings/display-listings.component';
+import { PropertyComponent } from './property/property.component';
+import { PropertyListComponent } from './property/property-list/property-list.component';
+import { UploadPropertyComponent } from './property/upload-property/upload-property.component';
+import { DetailedPropertyComponent } from './property/detailed-property/detailed-property.component';
 
 
 @NgModule({
@@ -79,7 +79,6 @@ import { DisplayListingsComponent } from './display-listings/display-listings.co
     HomeComponent,
     NavbarComponent,
     LoginComponent,
-    ListingsComponent,
     DashboardComponent,
     SignupComponent,
 
@@ -88,10 +87,10 @@ import { DisplayListingsComponent } from './display-listings/display-listings.co
     VerifyEmailComponent,
     AdminDashboardComponent,
 
-    ImagesComponent,
-    ImageComponent,
-    ImageListComponent,
-    DisplayListingsComponent,
+    PropertyComponent,
+    PropertyListComponent,
+    UploadPropertyComponent,
+    DetailedPropertyComponent,
 
   ],
   imports: [

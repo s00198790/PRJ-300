@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { ImageService } from 'src/app/shared/image.service';
+import { PropertyService } from 'src/app/services/property.service';
 
 
 @Component({
-  selector: 'app-image-list',
-  templateUrl: './image-list.component.html',
-  styleUrls: ['./image-list.component.css']
+  selector: 'app-property-list',
+  templateUrl: './property-list.component.html',
+  styleUrls: ['./property-list.component.css']
 })
-export class ImageListComponent implements OnInit {
+export class PropertyListComponent implements OnInit {
 
   imageList: any[];
   rowIndexArray: any[];
 
-  constructor(private service: ImageService, public router: Router) {}
+  constructor(private service: PropertyService, public router: Router) {}
 
   openListing() {
     this.router.navigate(['property']);

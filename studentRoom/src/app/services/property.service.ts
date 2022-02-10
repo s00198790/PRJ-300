@@ -4,7 +4,7 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/datab
 @Injectable({
   providedIn: 'root'
 })
-export class ImageService {
+export class PropertyService {
 
 imageDetailList: AngularFireList<any>;
 

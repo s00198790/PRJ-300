@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DisplayListingsComponent } from './display-listings.component';
+import { UploadPropertyComponent } from './upload-property.component';
 
-describe('DisplayListingsComponent', () => {
-  let component: DisplayListingsComponent;
-  let fixture: ComponentFixture<DisplayListingsComponent>;
+describe('UploadPropertyComponent', () => {
+  let component: UploadPropertyComponent;
+  let fixture: ComponentFixture<UploadPropertyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DisplayListingsComponent ]
+      declarations: [ UploadPropertyComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DisplayListingsComponent);
+    fixture = TestBed.createComponent(UploadPropertyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
