@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export type OpenState = 'open' | 'closed';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class UiService {
   openState = new BehaviorSubject<OpenState>('closed');

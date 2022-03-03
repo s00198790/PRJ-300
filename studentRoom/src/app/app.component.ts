@@ -52,6 +52,7 @@ import { gsap } from 'gsap';
   ],
 })
 export class AppComponent implements OnInit, OnDestroy {
+  [x: string]: any;
   @ViewChild('nav', { static: true }) nav: ElementRef<HTMLUListElement>;
   @ViewChild('ad', { static: true }) ad: ElementRef<HTMLDivElement>;
   @ViewChild('logo', { static: true }) logo: ElementRef<HTMLDivElement>;
@@ -74,7 +75,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.ui
       .getOpenState()
       .pipe(takeUntil(this.destroyed$))
-      .subscribe((openState: OpenState) => {
+      .subscribe((openState: any) => {
         this.openState = openState;
         this.cdr.detectChanges();
       });

@@ -82,6 +82,7 @@ import { DetailComponent } from './components/detail/detail.component';
     ListingsComponent,
     DashboardComponent,
     SignupComponent,
+    DetailComponent,
 
     ProfileComponent,
     ForgotPasswordComponent,

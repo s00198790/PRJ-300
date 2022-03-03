@@ -13,7 +13,7 @@ import {
   animations: [elementAnimations],
 })
 export class ListingsComponent implements OnInit {
-  @HostBinding('@elementAnimations') animate;
+  @HostBinding('@elementAnimations') animate: any;
   animationElement = ANIMATION_ELEMENT;
 
   propertiesList = propertiesList;
@@ -22,7 +22,7 @@ export class ListingsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  animationDone(event) {
+  animationDone(event: { element: HTMLDivElement; }) {
     (event.element as HTMLDivElement).childNodes.forEach((item) => {
       const node = item as HTMLDivElement;
       if (node.classList && node.classList.contains('active')) {
