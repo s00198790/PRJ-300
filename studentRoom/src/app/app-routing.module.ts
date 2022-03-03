@@ -28,6 +28,10 @@ const routes: Routes = [
     component: DetailComponent,
     outlet: 'd',
   },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+  }
 ];
 
 @NgModule({

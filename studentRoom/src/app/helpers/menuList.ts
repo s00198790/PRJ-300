@@ -27,8 +27,8 @@ export const menuList: Menu[] = [
     icon: 'icon-text-document',
   },
   {
-    name: 'Log In',
-    link: '/login',
+    name: 'Profile',
+    link: '/profile',
     icon: 'icon-cog',
   },
 ];
