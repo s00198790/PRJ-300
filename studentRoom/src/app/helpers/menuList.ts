@@ -7,28 +7,18 @@ export const menuList: Menu[] = [
     icon: 'icon-grid',
   },
   {
-    name: 'Data',
-    link: '/data',
-    icon: 'icon-circular-graph',
-  },
-  {
     name: 'Listings',
     link: '/listings',
     icon: 'icon-list',
   },
   {
-    name: 'Clients',
-    link: '/clients',
+    name: 'Profile',
+    link: '/profile',
     icon: 'icon-user',
   },
   {
-    name: 'Bills',
-    link: '/bills',
+    name: 'Upload Listing',
+    link: '/upload',
     icon: 'icon-text-document',
-  },
-  {
-    name: 'Profile',
-    link: '/profile',
-    icon: 'icon-cog',
   },
 ];

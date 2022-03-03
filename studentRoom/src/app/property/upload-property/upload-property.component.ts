@@ -2,25 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { finalize } from 'rxjs';
-import { ImageService } from 'src/app/shared/image.service';
+import { PropertyService } from 'src/app/services/property.service';
 
 @Component({
-  selector: 'app-image',
-  templateUrl: './image.component.html',
-  styleUrls: ['./image.component.scss']
+  selector: 'app-upload-property',
+  templateUrl: './upload-property.component.html',
+  styleUrls: ['./upload-property.component.scss']
 })
-export class ImageComponent implements OnInit {
+export class UploadPropertyComponent implements OnInit {
 
   imgSrc: string = '/assets/img/Placeholder.jpg';
   selectedImage: any = null;
   isSubmitted: boolean = false;
 
 formTemplate = new FormGroup({
-  caption: new FormControl('',Validators.required),
+  shortDesc: new FormControl('',Validators.required),
+  price: new FormControl('',Validators.required),
+  location: new FormControl('',Validators.required),
   imageUrl: new FormControl('',Validators.required)
 }) 
 
-  constructor(private storage:AngularFireStorage, private service:ImageService) { }
+  constructor(private storage:AngularFireStorage, private service:PropertyService) { }
 
   ngOnInit(): void {
     this.resetForm();
@@ -42,7 +44,7 @@ formTemplate = new FormGroup({
   onSubmit(formValue: any) {
     this.isSubmitted = true;
     if(this.formTemplate.valid){
-      var filePath = '${formValue.category}/${this.selectedImage.name.split}_${new Date().getTime()}';
+      var filePath = `${formValue.category}/${this.selectedImage.name.split}_${new Date().getTime()}`;
       const fileRef = this.storage.ref(filePath);
       this.storage.upload(filePath, this.selectedImage).snapshotChanges().pipe(
         finalize(()=>{
@@ -63,7 +65,9 @@ formTemplate = new FormGroup({
   resetForm() {
     this.formTemplate.reset();
     this.formTemplate.setValue({
-      caption:'',
+      shortDesc: '',
+      price: '',
+      location:'',
       imageUrl:''
     });
     this.imgSrc = '/assets/img/Placeholder.jpg';

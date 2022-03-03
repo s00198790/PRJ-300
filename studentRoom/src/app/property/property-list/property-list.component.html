@@ -1,0 +1,38 @@
+<table class="center" *ngIf="imageList">
+    <tr *ngFor="let i of rowIndexArray">
+        <td>
+        <div class="card mb-4">
+            <img [src]="imageList[3*i].imageUrl" class="img-fluid">
+            <div class="card-body">
+                <div class="small text-muted">{{imageList[3*i].price}}</div>
+                <h2 class="card-title">{{imageList[3*i].location}}</h2>
+                <p class="card-text">{{imageList[3*i].shortDesc}}</p>
+                <a class="btn btn-primary" (click)="openListing()">View Listing</a>
+            </div>
+        </div>
+        
+        </td>
+        <td>
+        <div class="card mb-4">
+            <img [src]="imageList[3*i+1].imageUrl" class="img-fluid">
+            <div class="card-body">
+                <div class="small text-muted">{{imageList[3*i+1].price}}</div>
+                <h2 class="card-title">{{imageList[3*i+1].location}}</h2>
+                <p class="card-text">{{imageList[3*i+1].shortDesc}}</p>
+                <a class="btn btn-primary" (click)="openListing()">View Listing</a>
+            </div>
+        </div>
+        </td>
+        <td>
+        <div class="card mb-4">
+            <img [src]="imageList[3*i+2].imageUrl" class="img-fluid">
+            <div class="card-body">
+                <div class="small text-muted">{{imageList[3*i+2].price}}</div>
+                <h2 class="card-title">{{imageList[3*i+2].location}}</h2>
+                <p class="card-text">{{imageList[3*i+2].shortDesc}}</p>
+                <a class="btn btn-primary" (click)="openListing()">View Listing</a>
+            </div>
+        </div>
+        </td>
+    </tr>
+</table>
