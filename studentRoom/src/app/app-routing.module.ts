@@ -15,27 +15,19 @@ import { AuthGuard } from './services/auth.guard';
 
 import { ImageComponent } from './images/image/image.component'; 
 import { ImageListComponent } from './images/image-list/image-list.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-
-  
-  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  {path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard] },
-
-  {path: 'listings', component: ListingsComponent, children:[{path:'upload', component: ImageComponent},{path: 'list', component: ImageListComponent}]},
-  
-
-  {path: 'login', component: LoginComponent},
-  {path: 'signup', component: SignupComponent},
-  {path: 'verify-email', component: VerifyEmailComponent},
-  {path: 'forgot-password', component: ForgotPasswordComponent},
-  {path: 'profile', component: ProfileComponent},
-
-
-  
+  {
+    path: 'listings',
+    component: ListingsComponent,
+  },
+  {
+    path: 'detail/:id',
+    component: DetailComponent,
+    outlet: 'd',
+  },
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {AngularFirestore} from '@angular/fire/compat/firestore'
+import { menuList } from './helpers/menuList';
 
 
 
@@ -9,6 +10,6 @@ import {AngularFirestore} from '@angular/fire/compat/firestore'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'studentRoom';
+ menu = menuList;
   
 }

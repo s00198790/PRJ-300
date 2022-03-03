@@ -70,6 +70,7 @@ import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { DetailComponent } from './components/detail/detail.component';
 
 
 @NgModule({
@@ -90,6 +91,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
     ImagesComponent,
     ImageComponent,
     ImageListComponent,
+    DetailComponent,
 
   ],
   imports: [
