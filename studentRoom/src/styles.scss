@@ -1,0 +1,20 @@
+:root {
+    --color-light-1: #f5f6fa;
+    --color-black: #121638;
+    --color-grey: #858b93;
+    --color-light-blue: #5175fb;
+    --color-red: #e14a4a;
+    --layout-margin: 0 10px 25px 10px;
+    --default-shadow: rgba(142, 142, 142, 0.1);
+  }
+  
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
