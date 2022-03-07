@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
+import { user } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { User } from './user';
+import { switchMap } from 'rxjs';
+import { EMPTY } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +14,23 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   userLoggedIn: boolean;
+  user$: Observable<User>;
 
-  constructor(private router: Router, private afAuth: AngularFireAuth, private afs: AngularFirestore) {
+  constructor(private router: Router,
+     private afAuth: AngularFireAuth, 
+     private afs: AngularFirestore) {
+         
     this.userLoggedIn = false;
+
+    this.user$ = this.afAuth.authState
+    .pipe(switchMap(((user => {
+        if (user) {
+          return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
+        } else {
+          return EMPTY
+        }
+      }))))
+    
 
     this.afAuth.onAuthStateChanged((user) => {              // set up a subscription to always know the login status of the user
         if (user) {
@@ -44,7 +63,9 @@ signupUser(user: any): Promise<any> {
 
           this.afs.doc('/users/' + emailLower)                        // on a successful signup, create a document in 'users' collection with the new user's info
               .set({
-                  accountType: 'endUser',
+                  accountType: {
+                      admin: true
+                  },
                   displayName: user.displayName,
                   displayName_lower: user.displayName.toLowerCase(),
                   email: user.email,
@@ -58,6 +79,7 @@ signupUser(user: any): Promise<any> {
           if (error.code)
               return { isValid: false, message: error.message };
       });
+
 }
 
 resetPassword(email: string): Promise<any> {
@@ -115,5 +137,9 @@ setUserInfo(payload: object) {
 getCurrentUser() {
   return this.afAuth.currentUser;                                 // returns user object for logged-in users, otherwise returns null 
 }
+
+}
+
+updateUserData(user){
 
 }
