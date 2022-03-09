@@ -1,0 +1,9 @@
+<div class="card mb-4">
+    <img [src]="listing.payload.imageUrl" class="img-fluid">
+    <div class="card-body">
+        <div class="small text-muted">{{listing.payload.price | currency: "EUR"}}</div>
+        <h2 class="card-title">{{listing.payload.location}}</h2>
+        <p class="card-text">{{listing.payload.shortDesc}}</p>
+        <a class="btn btn-primary" (click)="openListing(listing)">View Listing</a>
+    </div>
+</div>

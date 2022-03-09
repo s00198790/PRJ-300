@@ -71,6 +71,7 @@ import { PropertyComponent } from './property/property.component';
 import { UploadPropertyComponent } from './property/upload-property/upload-property.component';
 import { PropertyListComponent } from './property/property-list/property-list.component';
 import { DetailedPropertyComponent } from './property/detailed-property/detailed-property.component';
+import { PropertyListItemComponent } from './property-list-item/property-list-item.component';
 
 
 @NgModule({
@@ -93,6 +94,7 @@ import { DetailedPropertyComponent } from './property/detailed-property/detailed
       UploadPropertyComponent,
       PropertyListComponent,
       DetailedPropertyComponent,
+      PropertyListItemComponent,
 
   ],
   imports: [

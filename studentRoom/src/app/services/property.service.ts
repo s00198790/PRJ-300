@@ -6,7 +6,7 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/datab
 })
 export class PropertyService {
 
-imageDetailList: AngularFireList<any>;
+  imageDetailList: AngularFireList<any>;
 
   constructor(private firebase:AngularFireDatabase) { }
 

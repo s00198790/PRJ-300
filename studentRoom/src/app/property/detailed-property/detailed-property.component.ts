@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PropertyService } from 'src/app/services/property.service';
 
 @Component({
   selector: 'app-detailed-property',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailedPropertyComponent implements OnInit {
 
-  constructor() { }
+  currentProperty: any;
+
+  constructor(private propertyService: PropertyService) { }
 
   ngOnInit(): void {
+    this.currentProperty = JSON.parse(localStorage.getItem('currentPropertyListing'));
+    console.log(this.currentProperty);
   }
 
 }
