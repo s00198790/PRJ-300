@@ -19,6 +19,8 @@ formTemplate = new FormGroup({
   shortDesc: new FormControl('',Validators.required),
   price: new FormControl('',Validators.required),
   location: new FormControl('',Validators.required),
+  address: new FormControl('',Validators.required),
+  longDesc: new FormControl('',Validators.required),
   imageUrl: new FormControl('',Validators.required)
 }) 
 
@@ -68,6 +70,8 @@ formTemplate = new FormGroup({
       shortDesc: '',
       price: '',
       location:'',
+      address:'',
+      longDesc:'',
       imageUrl:''
     });
     this.imgSrc = '/assets/img/Placeholder.jpg';
