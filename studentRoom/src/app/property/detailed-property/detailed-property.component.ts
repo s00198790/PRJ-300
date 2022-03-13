@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PropertyService } from 'src/app/services/property.service';
+import { HttpClient } from '@angular/common/http';
+import { HttpHandler } from '@angular/common/http';
+import { DocumentReference } from 'firebase/firestore';
 
 @Component({
   selector: 'app-detailed-property',
