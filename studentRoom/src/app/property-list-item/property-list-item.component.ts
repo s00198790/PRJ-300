@@ -42,9 +42,17 @@ export class PropertyListItemComponent implements OnInit {
   }
 
   openListing(listing: Listing) {
-    // localStorage.setItem('currentPropertyListing', JSON.stringify(listing));
+    localStorage.setItem('currentPropertyListing', JSON.stringify(listing));
     this.router.navigate(['property/'], {
       queryParams: { 'id': listing.id }
     });
   }
+
+  // editListing(listing: Listing): void {
+  //   this.updateFileDatabase(listing.id)
+  // }
+
+  // updateFileDatabase(id: string) {
+  //   return this.db.list('imageDetails').update(id, { location: 'Mayo'});
+  // }
 }
