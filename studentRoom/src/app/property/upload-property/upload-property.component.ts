@@ -7,7 +7,7 @@ import { PropertyService } from 'src/app/services/property.service';
 @Component({
   selector: 'app-upload-property',
   templateUrl: './upload-property.component.html',
-  styleUrls: ['./upload-property.component.css']
+  styleUrls: ['./upload-property.component.scss']
 })
 export class UploadPropertyComponent implements OnInit {
 

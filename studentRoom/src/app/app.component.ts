@@ -6,7 +6,7 @@ import {AngularFirestore} from '@angular/fire/compat/firestore'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'studentRoom';
