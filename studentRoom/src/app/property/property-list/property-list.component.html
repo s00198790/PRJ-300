@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <table class="center" *ngIf="imageList">
     <tr *ngFor="let i of rowIndexArray">
         <td>
@@ -36,3 +37,12 @@
         </td>
     </tr>
 </table>
+=======
+<div class="container">
+    <div class="row">
+      <div class="col-4" *ngFor="let item of imageList">
+        <app-property-list-item [listing]="item"></app-property-list-item>
+      </div>
+    </div>
+  </div>
+>>>>>>> Frontend_Redesign

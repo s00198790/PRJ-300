@@ -1,3 +1,41 @@
-<app-navbar></app-navbar>
-
-<router-outlet></router-outlet>
+<div class="main">
+  <div class="user" #user>
+    <div class="user__info">
+      <div class="circle-avatar">
+        <img src="./assets/img/illustration.jpg" alt="" />
+      </div>
+      <div *ngIf="(user1 | async)">
+        <div>{{ (user1 | async)?.displayName }}</div>
+      </div>
+      
+    </div>
+    
+  </div>
+  <nav class="navigation">
+    <div class="logo" #logo>
+      <h3>Student Room</h3>
+    </div>
+    <ul class="nav" #nav>
+      <li
+        class="nav__item"
+        *ngFor="let menu of menuList"
+        [routerLink]="menu.link"
+        (click)="onNavigate(menu.link)"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLinkActive
+        #routerLink="routerLinkActive"
+        [class.menu-active]="routerLink.isActive"
+      >
+        <svg class="icon {{ menu.icon }}">
+          <use attr.xlink:href="./assets/icons.svg#{{ menu.icon }}"></use>
+        </svg>
+        <a class="nav__link">{{ menu.name }}</a>
+      </li>
+    </ul>
+    
+  </nav>
+  <router-outlet></router-outlet>
+  <div class="detail" [@detailPage]="openState">
+    <router-outlet name="d"></router-outlet>
+  </div>
+</div>

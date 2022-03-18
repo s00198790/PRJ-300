@@ -11,13 +11,22 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './services/auth.guard';
-
 import { PropertyComponent } from './property/property.component';
 import { UploadPropertyComponent } from './property/upload-property/upload-property.component';
 import { DetailedPropertyComponent } from './property/detailed-property/detailed-property.component';
 
+<<<<<<< HEAD
+import { PropertyComponent } from './property/property.component';
+import { UploadPropertyComponent } from './property/upload-property/upload-property.component';
+import { DetailedPropertyComponent } from './property/detailed-property/detailed-property.component';
+=======
+import { DetailComponent } from './components/detail/detail.component';
+import { PropertyListComponent } from './property/property-list/property-list.component';
+>>>>>>> Frontend_Redesign
+
 
 const routes: Routes = [
+  
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
 
@@ -26,8 +35,14 @@ const routes: Routes = [
   {path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard] },
 
   {path: 'listings', component: PropertyComponent},
+<<<<<<< HEAD
   {path:'upload', component: UploadPropertyComponent},
   {path: 'property', component: DetailedPropertyComponent},
+=======
+   {path:'upload', component: UploadPropertyComponent},
+   {path: 'property', component: DetailedPropertyComponent},
+  {path: 'detail/:id', component: DetailComponent, outlet: 'd'},
+>>>>>>> Frontend_Redesign
 
   
 
@@ -36,9 +51,6 @@ const routes: Routes = [
   {path: 'verify-email', component: VerifyEmailComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'profile', component: ProfileComponent},
-
-
-  
 ];
 
 @NgModule({

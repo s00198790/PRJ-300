@@ -6,7 +6,11 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/datab
 })
 export class PropertyService {
 
+<<<<<<< HEAD
 imageDetailList: AngularFireList<any>;
+=======
+  imageDetailList: AngularFireList<any>;
+>>>>>>> Frontend_Redesign
 
   constructor(private firebase:AngularFireDatabase) { }
 
@@ -17,4 +21,8 @@ imageDetailList: AngularFireList<any>;
   insertImageDetails(imageDetails: any) {
     this.imageDetailList.push(imageDetails);
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> Frontend_Redesign

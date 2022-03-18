@@ -2,15 +2,52 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { Observable, of, switchMap } from 'rxjs';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+    user$: Observable<User>;
+
+    private updateUserData(user: { uid: any; }) {
+        // Sets user data to firestore on login
+        const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+        const data: User = {
+          uid: user.uid,
+          accountType: {
+            admin: true
+          }
+        }
+        return userRef.set(data, { merge: true })
+      }
+  
+      private checkAuthorization(user:User, allowedRoles:string[]): boolean{
+          if(!user) return false
+          for (const role of allowedRoles) {
+            //   if (user.accountType[role]) {
+            //       return true
+            //   }
+          }
+
+      }
+
   userLoggedIn: boolean;
 
   constructor(private router: Router, private afAuth: AngularFireAuth, private afs: AngularFirestore) {
+
+    this.user$ = this.afAuth.authState
+    .pipe(switchMap(user => {
+        if(user) {
+            return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
+        } else {
+            return of(null)
+        }
+    }))
+    
+
     this.userLoggedIn = false;
 
     this.afAuth.onAuthStateChanged((user) => {              // set up a subscription to always know the login status of the user
@@ -117,3 +154,5 @@ getCurrentUser() {
 }
 
 }
+
+

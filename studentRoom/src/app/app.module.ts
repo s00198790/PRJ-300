@@ -64,6 +64,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
+<<<<<<< HEAD
 
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
@@ -71,6 +72,16 @@ import { PropertyComponent } from './property/property.component';
 import { PropertyListComponent } from './property/property-list/property-list.component';
 import { UploadPropertyComponent } from './property/upload-property/upload-property.component';
 import { DetailedPropertyComponent } from './property/detailed-property/detailed-property.component';
+=======
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { DetailComponent } from './components/detail/detail.component';
+import { PropertyComponent } from './property/property.component';
+import { UploadPropertyComponent } from './property/upload-property/upload-property.component';
+import { PropertyListComponent } from './property/property-list/property-list.component';
+import { DetailedPropertyComponent } from './property/detailed-property/detailed-property.component';
+import { PropertyListItemComponent } from './property-list-item/property-list-item.component';
+>>>>>>> Frontend_Redesign
 
 
 @NgModule({
@@ -81,16 +92,26 @@ import { DetailedPropertyComponent } from './property/detailed-property/detailed
     LoginComponent,
     DashboardComponent,
     SignupComponent,
+    DetailComponent,
 
     ProfileComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
     AdminDashboardComponent,
 
+<<<<<<< HEAD
     PropertyComponent,
     PropertyListComponent,
     UploadPropertyComponent,
     DetailedPropertyComponent,
+=======
+    DetailComponent,
+      PropertyComponent,
+      UploadPropertyComponent,
+      PropertyListComponent,
+      DetailedPropertyComponent,
+      PropertyListItemComponent,
+>>>>>>> Frontend_Redesign
 
   ],
   imports: [
