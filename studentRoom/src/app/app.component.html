@@ -4,7 +4,10 @@
       <div class="circle-avatar">
         <img src="./assets/img/illustration.jpg" alt="" />
       </div>
-      <div class="user-name">David</div>
+      <div *ngIf="(user1 | async)">
+        <div>{{ (user1 | async)?.displayName }}</div>
+      </div>
+      
     </div>
     
   </div>

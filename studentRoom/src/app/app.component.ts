@@ -17,10 +17,13 @@ import {
 } from '@angular/animations';
 import { UiService, OpenState } from './services/ui.service';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { gsap } from 'gsap';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+
 
 @Component({
   selector: 'rl-root',
@@ -62,14 +65,29 @@ export class AppComponent implements OnInit, OnDestroy {
   propertiesList = propertiesList;
   openState: OpenState;
   menuLink: string;
+  user1: Observable<any>;
 
   constructor(
     public ui: UiService,
     private cdr: ChangeDetectorRef,
-    private router: Router
-  ) {}
+    private router: Router,
+    private firestore: AngularFirestore,
+    private afAuth: AngularFireAuth
+    
+  ) {
+    this.user1 = null;
+  }
 
   ngOnInit() {
+
+    this.afAuth.authState.subscribe(user1 => {
+      console.log('Dashboard: user', user1);
+
+      if (user1) {
+          let emailLower = user1.email.toLowerCase();
+          this.user1 = this.firestore.collection('users').doc(emailLower).valueChanges();
+      }
+  });
     this.initAnimations();
 
     this.ui
