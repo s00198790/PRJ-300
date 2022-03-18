@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { PropertyService } from 'src/app/services/property.service';
 import { HttpClient } from '@angular/common/http';
 import { HttpHandler } from '@angular/common/http';
 import { DocumentReference } from 'firebase/firestore';
->>>>>>> Frontend_Redesign
 
 @Component({
   selector: 'app-detailed-property',
@@ -14,14 +11,6 @@ import { DocumentReference } from 'firebase/firestore';
 })
 export class DetailedPropertyComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
-=======
   currentProperty: any;
 
   constructor(private propertyService: PropertyService) { }
@@ -32,4 +21,3 @@ export class DetailedPropertyComponent implements OnInit {
   }
 
 }
->>>>>>> Frontend_Redesign

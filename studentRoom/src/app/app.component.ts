@@ -28,9 +28,6 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat
 @Component({
   selector: 'rl-root',
   templateUrl: './app.component.html',
-<<<<<<< HEAD
-  styleUrls: ['./app.component.scss']
-=======
   styleUrls: ['./app.component.scss'],
   animations: [
     trigger('detailPage', [
@@ -56,7 +53,6 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat
       transition('open => closed', [animate('0.4s ease-out')]),
     ]),
   ],
->>>>>>> Frontend_Redesign
 })
 export class AppComponent implements OnInit, OnDestroy {
   [x: string]: any;

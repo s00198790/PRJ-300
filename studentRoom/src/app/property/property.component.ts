@@ -14,8 +14,4 @@ export class PropertyComponent implements OnInit {
     this.service.getImageDetailsList();
   }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> Frontend_Redesign

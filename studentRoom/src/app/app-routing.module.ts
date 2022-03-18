@@ -15,14 +15,8 @@ import { PropertyComponent } from './property/property.component';
 import { UploadPropertyComponent } from './property/upload-property/upload-property.component';
 import { DetailedPropertyComponent } from './property/detailed-property/detailed-property.component';
 
-<<<<<<< HEAD
-import { PropertyComponent } from './property/property.component';
-import { UploadPropertyComponent } from './property/upload-property/upload-property.component';
-import { DetailedPropertyComponent } from './property/detailed-property/detailed-property.component';
-=======
 import { DetailComponent } from './components/detail/detail.component';
 import { PropertyListComponent } from './property/property-list/property-list.component';
->>>>>>> Frontend_Redesign
 
 
 const routes: Routes = [
@@ -35,14 +29,9 @@ const routes: Routes = [
   {path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard] },
 
   {path: 'listings', component: PropertyComponent},
-<<<<<<< HEAD
-  {path:'upload', component: UploadPropertyComponent},
-  {path: 'property', component: DetailedPropertyComponent},
-=======
    {path:'upload', component: UploadPropertyComponent},
    {path: 'property', component: DetailedPropertyComponent},
   {path: 'detail/:id', component: DetailComponent, outlet: 'd'},
->>>>>>> Frontend_Redesign
 
   
 
