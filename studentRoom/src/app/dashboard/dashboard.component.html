@@ -5,12 +5,20 @@
     <span>Home</span>
 </button>
 
-<mat-list *ngIf="(user | async)">
-    <mat-list-item>Account Type: {{ (user | async)?.accountType }}</mat-list-item>
-    <mat-list-item>Display Name: {{ (user | async)?.displayName }}</mat-list-item>
-    <mat-list-item>Display Name (lower): {{ (user | async)?.displayName_lower }}</mat-list-item>
-    <mat-list-item>Email: {{ (user | async)?.email }}</mat-list-item>
-    <mat-list-item>Email (lower): {{ (user | async)?.email_lower }}</mat-list-item>
-    <!-- <mat-list-item>Email Verification Status: {{ (afAuth.user | async)?.emailVerified }}</mat-list-item> -->
-</mat-list>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="pt-3 pb-4 mb-3 border-bottom">
+      <h1 class="h2">User Dashboard</h1>
+    </div>
+    <div class="row" *ngIf="(user | async)">
+      <div class="col-md-12">
+        <div class="media">
+          <div class="media-body">
+            <h1>Hello: <strong>{{ (user | async)?.displayName }}</strong></h1>
+            <p>Email: <strong>{{ (user | async)?.email }}</strong></p>
+            <p>Account Type: <strong>{{ (user | async)?.accountType }}</strong></p>
+            <p>Email Verification Status: <strong>{{ (afAuth.user | async)?.emailVerified }}</strong></p>        
+          </div>
+        </div>
+      </div>
+    </div>
 
