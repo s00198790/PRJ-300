@@ -63,7 +63,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
-
+import { ContactFormComponent } from './contact-form/contact-form.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { DetailComponent } from './components/detail/detail.component';
@@ -88,6 +88,7 @@ import { PropertyListItemComponent } from './property-list-item/property-list-it
     ForgotPasswordComponent,
     VerifyEmailComponent,
     AdminDashboardComponent,
+    ContactFormComponent,
 
     DetailComponent,
       PropertyComponent,

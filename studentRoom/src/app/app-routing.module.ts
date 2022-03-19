@@ -14,6 +14,7 @@ import { AuthGuard } from './services/auth.guard';
 import { PropertyComponent } from './property/property.component';
 import { UploadPropertyComponent } from './property/upload-property/upload-property.component';
 import { DetailedPropertyComponent } from './property/detailed-property/detailed-property.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 import { DetailComponent } from './components/detail/detail.component';
 import { PropertyListComponent } from './property/property-list/property-list.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
 
   {path: 'listings', component: PropertyComponent},
    {path:'upload', component: UploadPropertyComponent},
+   {path: 'contact', component: ContactFormComponent},
    {path: 'property', component: DetailedPropertyComponent},
   {path: 'detail/:id', component: DetailComponent, outlet: 'd'},
 
