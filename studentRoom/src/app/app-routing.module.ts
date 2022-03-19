@@ -15,6 +15,7 @@ import { PropertyComponent } from './property/property.component';
 import { UploadPropertyComponent } from './property/upload-property/upload-property.component';
 import { DetailedPropertyComponent } from './property/detailed-property/detailed-property.component';
 
+import { HomepageComponent } from './homepage/homepage.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { PropertyListComponent } from './property/property-list/property-list.component';
 
@@ -22,7 +23,7 @@ import { PropertyListComponent } from './property/property-list/property-list.co
 const routes: Routes = [
   
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
+  {path: 'home', component: HomepageComponent},
 
   
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
