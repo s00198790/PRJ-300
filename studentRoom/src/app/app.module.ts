@@ -72,6 +72,7 @@ import { UploadPropertyComponent } from './property/upload-property/upload-prope
 import { PropertyListComponent } from './property/property-list/property-list.component';
 import { DetailedPropertyComponent } from './property/detailed-property/detailed-property.component';
 import { PropertyListItemComponent } from './property-list-item/property-list-item.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 
 @NgModule({
@@ -95,6 +96,7 @@ import { PropertyListItemComponent } from './property-list-item/property-list-it
       PropertyListComponent,
       DetailedPropertyComponent,
       PropertyListItemComponent,
+      HomepageComponent,
 
   ],
   imports: [
