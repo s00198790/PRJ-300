@@ -1,11 +1,9 @@
 <div class="main">
   <div class="user" #user>
     <div class="user__info">
-      <div class="circle-avatar">
-        <img src="./assets/img/illustration.jpg" alt="" />
-      </div>
+     
       <div *ngIf="(user1 | async)">
-        <div>{{ (user1 | async)?.displayName }}</div>
+        <div>Logged in as: {{ (user1 | async)?.displayName }}</div>
       </div>
       
     </div>
