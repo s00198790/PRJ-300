@@ -73,6 +73,7 @@ import { PropertyListComponent } from './property/property-list/property-list.co
 import { DetailedPropertyComponent } from './property/detailed-property/detailed-property.component';
 import { PropertyListItemComponent } from './property-list-item/property-list-item.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 
 @NgModule({
@@ -155,6 +156,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     ReactiveFormsModule
 
   ],
